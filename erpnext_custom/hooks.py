@@ -95,13 +95,23 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	"Employee": {
+		"validate": "erpnext_custom.erpnext_custom.doc_event.employee_event.validate_create_task",
+	},
+    "Attendance": {
+		"validate": "erpnext_custom.erpnext_custom.doc_event.attendence_custom_event.validate_attendance_hours",
+	},
+    # "Sales Invoice": {
+	# 	"validate": "erpnext_custom.erpnext_custom.doc_event.sales_invoice_custom.validate_remarks",
+	# }
+	# "Sales Invoice": {
+	# 	"validate": "erpnext_custom.erpnext_custom.doc_event.sales_invoice_custom.validate_note",
+	# }
+   "Sales Invoice": {
+		"validate": "erpnext_custom.erpnext_custom.doc_event.sales_invoice_custom.validate_note",
+	}
+}
 
 # Scheduled Tasks
 # ---------------
