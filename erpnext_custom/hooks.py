@@ -102,15 +102,13 @@ doc_events = {
     "Attendance": {
 		"validate": "erpnext_custom.erpnext_custom.doc_event.attendence_custom_event.validate_attendance_hours",
 	},
-    # "Sales Invoice": {
-	# 	"validate": "erpnext_custom.erpnext_custom.doc_event.sales_invoice_custom.validate_remarks",
-	# }
-	# "Sales Invoice": {
-	# 	"validate": "erpnext_custom.erpnext_custom.doc_event.sales_invoice_custom.validate_note",
-	# }
-   "Sales Invoice": {
-		"validate": "erpnext_custom.erpnext_custom.doc_event.sales_invoice_custom.validate_note",
-	}
+	"Sales Invoice": {
+		"validate": [
+				"erpnext_custom.erpnext_custom.doc_event.sales_invoice_custom.validate_remarks",
+			    "erpnext_custom.erpnext_custom.doc_event.sales_invoice_custom.validate_note",
+				"erpnext_custom.erpnext_custom.doc_event.sales_invoice_custom.validate_pos_payments",
+					 ]
+	},
 }
 
 # Scheduled Tasks
