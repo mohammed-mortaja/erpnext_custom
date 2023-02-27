@@ -1,5 +1,5 @@
 import frappe
-from frappe.utils import time_diff_in_hours
+# from frappe.utils import time_diff_in_hours
 
 
 # @frappe.whitelist()
@@ -30,3 +30,7 @@ def validate_pos_payments(doc, method):
             total += payment.amount 
     if total <= 0:
         frappe.throw('payment for pos invoice must be more than zero')
+
+@frappe.whitelist()
+def customer_value(customer):
+    return frappe.get_doc('Customer', customer).allow_discount

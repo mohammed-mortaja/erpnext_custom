@@ -101,7 +101,8 @@ override_doctype_class = {
 
 doctype_js = {
 	"Quotation": "public/js/quotation.js",
-	"Purchase Order": "public/js/purchase_order.js"
+	"Purchase Order": "public/js/purchase_order.js",
+	"Sales Invoice": "public/js/sales_invoice.js",
 }
 
 
