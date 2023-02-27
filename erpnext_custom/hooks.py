@@ -91,9 +91,19 @@ app_license = "MIT"
 #	"ToDo": "custom_app.overrides.CustomToDo"
 # }
 
+override_doctype_class = {
+	"Purchase Order": "erpnext_custom.erpnext_custom.override.purchase_order.PurchaseOrder"
+}
+
 # Document Events
 # ---------------
 # Hook on document methods and events
+
+doctype_js = {
+	"Quotation": "public/js/quotation.js",
+	"Purchase Order": "public/js/purchase_order.js"
+}
+
 
 doc_events = {
 	"Employee": {
@@ -104,7 +114,7 @@ doc_events = {
 	},
 	"Sales Invoice": {
 		"validate": [
-				"erpnext_custom.erpnext_custom.doc_event.sales_invoice_custom.validate_remarks",
+				# "erpnext_custom.erpnext_custom.doc_event.sales_invoice_custom.validate_remarks",
 			    "erpnext_custom.erpnext_custom.doc_event.sales_invoice_custom.validate_note",
 				"erpnext_custom.erpnext_custom.doc_event.sales_invoice_custom.validate_pos_payments",
 					 ]
