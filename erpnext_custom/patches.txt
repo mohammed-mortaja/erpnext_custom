@@ -1,0 +1,1 @@
+erpnext_custom.patches.add_department_to_BOM

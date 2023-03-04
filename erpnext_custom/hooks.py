@@ -103,6 +103,7 @@ doctype_js = {
 	"Quotation": "public/js/quotation.js",
 	"Purchase Order": "public/js/purchase_order.js",
 	"Sales Invoice": "public/js/sales_invoice.js",
+	"Item": "public/js/item.js",
 }
 
 
@@ -120,6 +121,13 @@ doc_events = {
 				"erpnext_custom.erpnext_custom.doc_event.sales_invoice_custom.validate_pos_payments",
 					 ]
 	},
+	"Material Request": {
+		"on_submit": "erpnext_custom.erpnext_custom.doc_event.material_request_custom.create_stock_entry",
+	},
+# "Material Request": {
+# 		"on_submit": "erpnext_zak.erpnext_zak.doc_events.material_request.on_submit"
+# 	},
+
 }
 
 # Scheduled Tasks
@@ -198,3 +206,4 @@ user_data_fields = [
 #	"erpnext_custom.auth.validate"
 # ]
 
+fixtures = ['Item']
